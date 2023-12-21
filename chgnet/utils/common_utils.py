@@ -3,12 +3,13 @@ from __future__ import annotations
 import json
 import os
 
-import nvidia_smi
 import torch
 from torch import Tensor
 
 
 def cuda_devices_sorted_by_free_mem() -> list[int]:
+    import nvidia_smi
+
     """List available CUDA devices sorted by increasing available memory.
 
     To get the device with the most free memory, use the last list item.
